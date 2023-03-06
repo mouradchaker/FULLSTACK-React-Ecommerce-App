@@ -1,4 +1,4 @@
-import { createMuiTheme, createTheme } from "@mui/material/styles";
+import { createTheme } from "@mui/material/styles";
 
 export const shades = {
   primary: {
@@ -38,7 +38,7 @@ export const shades = {
   },
 };
 
-export const theme = createMuiTheme({
+export const theme = createTheme({
   palette: {
     primary: {
       main: shades.primary[500],
