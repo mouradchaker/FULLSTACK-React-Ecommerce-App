@@ -63,7 +63,64 @@ function CartMenu() {
           {/* CART LIST */}
           <Box>
             {cart.map((item) => (
-              <Box key={`${item.attributes.name}-${item.id}`}></Box>
+              <Box key={`${item.attributes.name}-${item.id}`}>
+                <FlexBox p="15px 0">
+                  <Box flex="1 1 40%">
+                    <img
+                      alt={item?.name}
+                      width="123px"
+                      height="164px"
+                      src={`http://localhost:1337${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+                    />
+                  </Box>
+
+                  <Box flex="1 1 60%">
+                    {/* ITEM NAME */}
+                    <FlexBox mb="5px">
+                      <Typography fontWeight="bold">
+                        {item.attributes.name}
+                      </Typography>
+
+                      <IconButton
+                        onClick={() =>
+                          dispatch(removeFromCart({ id: item.id }))
+                        }
+                      >
+                        <CloseIcon />
+                      </IconButton>
+                    </FlexBox>
+
+                    <Typography>{item.attributes.shortDescription}</Typography>
+
+                    {/* AMOUNT */}
+                    <FlexBox m="15px 0">
+                      <Box
+                        display="flex"
+                        alignItems="center"
+                        border={`1.5px solid ${shades.neutral[500]}`}
+                      >
+                        <IconButton
+                          onClick={() =>
+                            dispatch(decreaseCount({ id: item.id }))
+                          }
+                        >
+                          <RemoveIcon />
+                        </IconButton>
+
+                        <Typography>{item.count}</Typography>
+
+                        <IconButton
+                          onClick={() =>
+                            dispatch(increaseCount({ id: item.id }))
+                          }
+                        >
+                          <AddIcon />
+                        </IconButton>
+                      </Box>
+                    </FlexBox>
+                  </Box>
+                </FlexBox>
+              </Box>
             ))}
           </Box>
         </Box>

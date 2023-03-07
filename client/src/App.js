@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Checkout from "./scenes/Checkout/Checkout";
 import Confirmation from "./scenes/Checkout/Confirmation";
+import CartMenu from "./scenes/Global/CartMenu";
 import Navbar from "./scenes/Global/Navbar";
 import Home from "./scenes/Home/Home";
 import ItemDetails from "./scenes/ItemDetails/ItemDetails";
@@ -27,6 +28,7 @@ function App() {
     <div className="app">
       <BrowserRouter>
         <Navbar />
+        <CartMenu />
         <ScrollToTop />
 
         <Routes>
