@@ -28,7 +28,7 @@ function App() {
     <div className="app">
       <BrowserRouter>
         <Navbar />
-        <CartMenu />
+
         <ScrollToTop />
 
         <Routes>
@@ -37,6 +37,7 @@ function App() {
           <Route path="checkout" element={<Checkout />} />
           <Route path="checkout/success" element={<Confirmation />} />
         </Routes>
+        <CartMenu />
       </BrowserRouter>
     </div>
   );
